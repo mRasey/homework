@@ -4,7 +4,7 @@ import json
 mr = MapReduce.MapReduce()
 
 
-def mapper(record):
+def mapper():
     # key: document identifier
     # value: document contents
     for line in sys.stdin:
@@ -14,15 +14,7 @@ def mapper(record):
         words = value.split()
         for w in words:
             mr.emit_intermediate(w, fileName)
-
-def reducer(key, fileNames):
-    fileList = []
-    for fileName in fileNames:
-        if fileName not in fileList:
-            fileList.append(fileName)
-    mr.emit((key, fileList))
+        print json.dumps(mr.intermediate)
 
 
-if __name__ == '__main__':
-    inputdata = open(sys.argv[1])
-    mr.execute(inputdata, mapper, reducer)
+mapper()

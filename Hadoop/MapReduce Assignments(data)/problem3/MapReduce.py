@@ -1,5 +1,6 @@
 import json
 
+
 class MapReduce:
     def __init__(self):
         self.intermediate = {}

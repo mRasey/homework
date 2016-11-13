@@ -1,0 +1,47 @@
+    0 {$t+}
+    0 program hello(input);
+****                      ^20
+    0   begin
+    0     begin
+    0     writeln(input);
+****                  ^ 0
+    3     end
+    3   end
+    3 .
+
+
+
+   identifiers  link  obj  typ  ref  nrm  lev  adr
+
+28              27    3    0    2    1    0    0
+
+
+
+blocks   last  lpar  psze  vsze
+
+   1       28    1    0    0
+   2        0   28    5    5
+
+
+
+arrays xtyp etyp eref low high elsz size
+
+
+
+
+code:
+
+    0   LOD      1    0    0,
+    1   WRW     29         0,
+    2   WRL     63          ,
+    3   HLT     31          ,
+
+Starting address is     0
+
+compiled with errors
+
+
+key words
+0 undef id  
+20 prog.param
+

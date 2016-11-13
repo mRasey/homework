@@ -2,9 +2,11 @@ import MapReduce, sys
 
 mr = MapReduce.MapReduce()
 
+
 def mapper(record):
   name = record[0]
   mr.emit_intermediate(name, 1)
+
 
 def reducer(name, list_of_values):
   total = 0
